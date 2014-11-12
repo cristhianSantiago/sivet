@@ -1,0 +1,81 @@
+﻿@model VeterinariaMVC.Models.Cliente
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Cliente</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nome, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Nome)
+                @Html.ValidationMessageFor(model => model.Nome)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CPF, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CPF)
+                @Html.ValidationMessageFor(model => model.CPF)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RG, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.RG)
+                @Html.ValidationMessageFor(model => model.RG)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DataNascimento, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DataNascimento)
+                @Html.ValidationMessageFor(model => model.DataNascimento)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Endereco, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Endereco)
+                @Html.ValidationMessageFor(model => model.Endereco)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Whatsapp, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Whatsapp)
+                @Html.ValidationMessageFor(model => model.Whatsapp)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
